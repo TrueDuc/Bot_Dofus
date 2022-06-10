@@ -1,0 +1,3 @@
+size = (1920, 1080)
+coord (0,0) en haut à gauche
+eccrarn dofus : largeur  355-1565  ||  hauteur  
