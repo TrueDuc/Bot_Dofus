@@ -1,0 +1,10 @@
+right
+
+up
+right
+left
+down
+down
+up
+
+# permet de trouver le chemin jusqu'à la banque/l'atelier/le champ...
