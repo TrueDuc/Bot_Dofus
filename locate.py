@@ -16,10 +16,11 @@ def near(new_pos, L_pos):
             return 1
     return 0
 
-# find the pos of img.png on the screen
-def locate(img):
+# find the pos of pic.png on the screen
+def locate(pic):
     L_pos = []
-    for loc in pyautogui.locateAllOnScreen(img, grayscale=False, confidence = 0.25):
+
+    for loc in pyautogui.locateAllOnScreen(pic, grayscale=False, confidence = 0.25):
         center = pyautogui.center(loc)
         # we verify that the location is on the main screen and not already visited
         if inScreen(center):
@@ -28,24 +29,6 @@ def locate(img):
     return L_pos
 
 
-time.sleep(3)
-print("Lets go")    
 
-L_pos = []
-
-for wheat_loc in pyautogui.locateAllOnScreen('image/wheat_map2.png', grayscale=False, confidence = 0.25):
-
-    wheat_point = pyautogui.center(wheat_loc)
-    # we verify that the location of the wheat is on the main screen (note on the sides)
-    print("test", wheat_point[0], wheat_point[1])
-    if inScreen(wheat_point): 
-        if not(near(wheat_point, L_pos)):
-            print("GO TO", wheat_point[0], wheat_point[1])
-            pyautogui.click(wheat_point[0], wheat_point[1])
-            L_pos.append(wheat_point)
-            time.sleep(5)
-
-
-print("No more wheat.")
 
 

@@ -1,3 +1,7 @@
 size = (1920, 1080)
 coord (0,0) top left corner
 dofus screen dimensions : width  355-1565  ||  height  50-900
+
+ctrl :
+press ctrl + :              to comment multiple lines
+press ctrl + maj + tab      to desindentate multiple lines

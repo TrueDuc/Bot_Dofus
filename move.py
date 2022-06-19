@@ -53,20 +53,43 @@ def moveDown():
     return
 
 # reads in "path.txt" and follows the instructions written in it to move to your destination
-def path(way):
+# def path(way):
+#     time.sleep(3)
+#     next_way = " "
+#     my_path = open("path.txt","r")
+#     while next_way != "":
+#         print(next_way)
+#         next_way = my_path.readline()
+#         move(next_way)
+#         time.sleep(5)
+#     my_path.close()
+
+
+
+# allows you to move from your current pos (x1, y1) to your destination (x2, y2) and take the ressources on the path
+def path(curr_pos: Coord, destination: Coord):
     time.sleep(3)
-    next_way = " "
-    my_path = open("path.txt","r")
-    while next_way != "":
-        print(next_way)
-        next_way = my_path.readline()
-        move(next_way)
+    while curr_pos.x != destination.x:
+        if curr_pos.x < destination.x:
+            move("right")
+            curr_pos.x += 1
+        else:
+            move("left")
+            curr_pos.x -= 1
         time.sleep(5)
-    my_path.close()
 
+    while curr_pos.y != destination.y:
+        if curr_pos.y < destination.y:
+            move("down")
+            curr_pos.y += 1
+        else:
+            move("up")
+            curr_pos.y -= 1
+        time.sleep(6)
 
-# allows you to move from your current pos (x1, y1) to your destination (x2, y2)
-def path_bis(curr_pos: Coord, destination: Coord):
+        
+# allows you to move from your current pos (x1, y1) to your destination (x2, y2) and take the ressources on the path
+def path_farm(curr_pos: Coord, destination: Coord):
     time.sleep(3)
     while curr_pos.x != destination.x:
         if curr_pos.x < destination.x:
